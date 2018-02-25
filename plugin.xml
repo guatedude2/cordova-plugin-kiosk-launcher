@@ -19,7 +19,7 @@
 
         <config-file target="config.xml" parent="/*">
             <feature name="Kiosk">
-                <param name="android-package" value="org.cordova.plugin.labs.kiosk.KioskPlugin" />
+                <param name="android-package" value="org.cordova.plugin.labs.kiosk.Kiosk" />
             </feature>
         </config-file>
 
