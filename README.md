@@ -57,6 +57,8 @@ Checks to see if the app is set as a launcher
     Kiosk.isSetAsLauncher(function(isSetAsLauncher){ ... })
 
 # Releases
+- 1.0.3
+    - Removes fullscreen bug
 - 1.0.2
     - Fixes wrong filename
     - Fixes KisokActivity not running
