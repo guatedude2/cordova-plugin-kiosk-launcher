@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-kiosk-launcher" version="0.2">
+    <name>Scanner</name>
+    <description>Cordova Kiosk Launcher Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,kiosk,launcher</keywords>
+
+    <engines>
+	<engine name="cordova" version=">=3.2.0" />
+    </engines>
+
+    <js-module src="www/kiosk.js" name="kiosk">
+        <clobbers target="window.Kiosk" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="Kiosk">
+                <param name="android-package" value="org.cordova.plugin.labs.kiosk.KioskPlugin" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:label='@string/activity_name']">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" /><!-- Handler of app icon (required to be launcher) -->
+                <category android:name="android.intent.category.HOME" /><!-- Handler of Home button -->
+            </intent-filter>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!-- autorun after the app APK is updated -->
+            <receiver android:name="org.cordova.plugin.labs.kiosk.MyPackageReplacedEventReceiver">
+                <intent-filter>
+                    <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                </intent-filter>
+            </receiver>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.REORDER_TASKS"/>
+        </config-file>
+
+        <source-file src="src/android/KioskActivity.java" target-dir="src/org/apache/cordova/labs/kiosk" />
+        <source-file src="src/android/Kiosk.java" target-dir="src/org/apache/cordova/labs/kiosk" />
+        <source-file src="src/android/MyPackageReplacedEventReceiver.java" target-dir="src/org/apache/cordova/labs/kiosk" />
+
+    </platform>
+
+</plugin>
