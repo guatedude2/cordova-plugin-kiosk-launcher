@@ -23,6 +23,11 @@
             </feature>
         </config-file>
 
+        <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
+            <activity android:name="org.cordova.plugin.labs.kiosk.KioskActivity" android:keepScreenOn="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            </activity>
+        </edit-config>
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:label='@string/activity_name']">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

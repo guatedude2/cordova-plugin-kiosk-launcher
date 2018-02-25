@@ -59,5 +59,6 @@ Checks to see if the app is set as a launcher
 # Releases
 - 1.0.2
     - Fixes wrong filename
+    - Fixes KisokActivity not running
 - 1.0.0
    - Initial NPM release

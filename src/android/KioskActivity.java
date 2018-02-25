@@ -24,6 +24,7 @@ public class KioskActivity extends CordovaActivity {
     }
 
     public void onCreate(Bundle savedInstanceState) {
+        System.out.println("KioskActivity paused");
         super.onCreate(savedInstanceState);
         super.init();
 
