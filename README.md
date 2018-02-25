@@ -57,6 +57,7 @@ Checks to see if the app is set as a launcher
     Kiosk.isSetAsLauncher(function(isSetAsLauncher){ ... })
 
 # Releases
-
+- 1.0.2
+    - Fixes wrong filename
 - 1.0.0
    - Initial NPM release

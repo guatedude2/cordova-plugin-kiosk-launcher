@@ -8,7 +8,7 @@ import android.widget.*;
 import org.json.JSONArray;
 import org.cordova.plugin.labs.kiosk.KioskActivity;
 
-public class KioskPlugin extends CordovaPlugin {
+public class Kiosk extends CordovaPlugin {
 
     public static final String EXIT_KIOSK = "exitKiosk";
     public static final String IS_IN_KIOSK = "isInKiosk";
