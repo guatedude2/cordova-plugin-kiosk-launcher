@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-kiosk-launcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cordova plugin to make a Cordova application a launcher",
   "cordova": {
     "id": "cordova-plugin-kiosk-launcher",
@@ -20,7 +20,6 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-
   "author": "Apache Software Foundation",
   "license": "Apache 2.0",
   "bugs": {
