@@ -19,7 +19,8 @@ This plugin has only been tested in Cordova 3.2 or greater, and its use in previ
 
 - [Installation](#installation)
 - [Methods](#methods)
-    - [Kiosk.exitKiosk](#kioskExitKiosk)
+    - [Kiosk.setKiosEnabled](#kioskSetKioskEnabled)
+    - [Kiosk.switchLauncher](#kioskSwitchLauncher)
     - [Kiosk.isInKiosk](#kioskIsInKiosk)
     - [Kiosk.isSetAsLauncher](#kioskIsSetAsLauncher)
 - [Releases](#releases)
@@ -37,11 +38,18 @@ From github latest (may not be stable)
 
 # Methods
 
-## Kiosk.exitKiosk
+## Kiosk.setKiosEnabled
 
-Exit kiosk mode and allows you set a different launcher
+Enables/disables kiosk mode and
 
-    Kiosk.exitKiosk();
+    Kiosk.setKiosEnabled(boolean);
+
+
+## Kiosk.switchLauncher
+
+Disables kiosk mode and allows you set a different launcher
+
+    Kiosk.switchLauncher();
 
 
 ## Kiosk.isInKiosk

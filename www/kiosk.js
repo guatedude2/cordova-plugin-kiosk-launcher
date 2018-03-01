@@ -1,29 +1,41 @@
-
-var exec = require('cordova/exec');
+var exec = require("cordova/exec");
 
 var Kiosk = {
+  setKiosEnabled(enabled) {
+    exec(null, null, "Kiosk", "kioskEnabled", [!!enabled]);
+  },
 
-    exitKiosk: function () {
-        exec(null, null, "Kiosk", "exitKiosk", []);
-    },
+  switchLauncher: function() {
+    exec(null, null, "Kiosk", "switchLauncher", []);
+  },
 
-    isInKiosk: function (callback) {
-        exec(function(out){
-            callback(out == "true");
-        }, function(error){
-            alert("Kiosk.isInKiosk failed: " + error);
-        }, "Kiosk", "isInKiosk", []);
-    },
+  isInKiosk: function(callback) {
+    exec(
+      function(out) {
+        callback(out == "true");
+      },
+      function(error) {
+        alert("Kiosk.isInKiosk failed: " + error);
+      },
+      "Kiosk",
+      "isInKiosk",
+      []
+    );
+  },
 
-    isSetAsLauncher: function (callback) {
-        exec(function(out){
-            callback(out == "true");
-        }, function(error){
-            alert("Kiosk.isSetAsLauncher failed: " + error);
-        }, "Kiosk", "isSetAsLauncher", []);
-    }
-
-}
+  isSetAsLauncher: function(callback) {
+    exec(
+      function(out) {
+        callback(out == "true");
+      },
+      function(error) {
+        alert("Kiosk.isSetAsLauncher failed: " + error);
+      },
+      "Kiosk",
+      "isSetAsLauncher",
+      []
+    );
+  }
+};
 
 module.exports = Kiosk;
-

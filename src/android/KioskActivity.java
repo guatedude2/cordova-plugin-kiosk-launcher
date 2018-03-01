@@ -10,6 +10,7 @@ import android.widget.*;
 public class KioskActivity extends CordovaActivity {
 
     public static volatile boolean running = false;
+    public static volatile boolean kioskModeEnabled = false;
 
     protected void onStart() {
         super.onStart();
@@ -39,9 +40,12 @@ public class KioskActivity extends CordovaActivity {
     protected void onPause() {
         super.onPause();
 
-        ActivityManager activityManager = (ActivityManager) getApplicationContext()
-                .getSystemService(Context.ACTIVITY_SERVICE);
+        if (kioskModeEnabled) {
+            ActivityManager activityManager = (ActivityManager) getApplicationContext()
+                    .getSystemService(Context.ACTIVITY_SERVICE);
 
-        activityManager.moveTaskToFront(getTaskId(), 0);
+            activityManager.moveTaskToFront(getTaskId(), 0);
+        }
+
     }
 }

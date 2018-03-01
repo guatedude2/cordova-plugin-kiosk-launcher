@@ -10,7 +10,8 @@ import org.cordova.plugin.labs.kiosk.KioskActivity;
 
 public class Kiosk extends CordovaPlugin {
 
-    public static final String EXIT_KIOSK = "exitKiosk";
+    public static final String SET_KIOSK_ENABLED = "setKioskEnabled";
+    public static final String SWITCH_LAUNCHER = "switchLauncher";
     public static final String IS_IN_KIOSK = "isInKiosk";
     public static final String IS_SET_AS_LAUNCHER = "isSetAsLauncher";
 
@@ -19,7 +20,7 @@ public class Kiosk extends CordovaPlugin {
         try {
             if (IS_IN_KIOSK.equals(action)) {
 
-                callbackContext.success(Boolean.toString(KioskActivity.running));
+                callbackContext.success(Boolean.toString(KioskActivity.kioskModeEnabled));
                 return true;
 
             } else if (IS_SET_AS_LAUNCHER.equals(action)) {
@@ -27,9 +28,12 @@ public class Kiosk extends CordovaPlugin {
                 String myPackage = cordova.getActivity().getApplicationContext().getPackageName();
                 callbackContext.success(Boolean.toString(myPackage.equals(findLauncherPackageName())));
                 return true;
-
-            } else if (EXIT_KIOSK.equals(action)) {
-
+            } else if (SET_KIOSK_ENABLED.equals(action)) {
+                KioskActivity.kioskModeEnabled = args.getBoolean(0);
+                callbackContext.success();
+                return true;
+            } else if (SWITCH_LAUNCHER.equals(action)) {
+                KioskActivity.kioskModeEnabled = false;
                 Intent intent = new Intent(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_HOME);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
