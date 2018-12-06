@@ -65,6 +65,8 @@ Checks to see if the app is set as a launcher
     Kiosk.isSetAsLauncher(function(isSetAsLauncher){ ... })
 
 # Releases
+- 1.1.2
+    - Remove bug on kiosk.js for android 4+ - 'Uncaught SyntaxError: Unexpected token ('
 - 1.0.3
     - Removes fullscreen bug
 - 1.0.2

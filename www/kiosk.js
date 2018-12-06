@@ -1,7 +1,7 @@
 var exec = require("cordova/exec");
 
 var Kiosk = {
-  setKioskEnabled(enabled) {
+  setKioskEnabled: function(enabled) {
     exec(null, null, "Kiosk", "setKioskEnabled", [!!enabled]);
   },
 
