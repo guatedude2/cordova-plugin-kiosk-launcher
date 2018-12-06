@@ -35,6 +35,17 @@ var Kiosk = {
       "isSetAsLauncher",
       []
     );
+  }, 
+
+  setKeysRunning: function (keyCodes) {
+    exec(
+      null, 
+      function (error) {
+        alert("Kiosk.setKeysRunning failed: " + error);
+      }, 
+      "Kiosk", 
+      "setKeysRunning", 
+      keyCodes);
   }
 };
 

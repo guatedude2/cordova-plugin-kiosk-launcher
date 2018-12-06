@@ -4,13 +4,20 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import org.apache.cordova.*;
 import android.widget.*;
+
+import java.lang.Integer;
+import java.util.Collections;
+import java.util.Set;
 
 public class KioskActivity extends CordovaActivity {
 
     public static volatile boolean running = false;
     public static volatile boolean kioskModeEnabled = false;
+
+    public static volatile Set<Integer> runningKeys = Collections.EMPTY_SET;
 
     protected void onStart() {
         super.onStart();
@@ -34,6 +41,12 @@ public class KioskActivity extends CordovaActivity {
         }
 
         loadUrl(launchUrl);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        System.out.println("onKeyDown event: keyCode = " + event.getKeyCode());
+        return !runningKeys.contains(event.getKeyCode()); // event not being propagated if not allowed
     }
 
     @Override

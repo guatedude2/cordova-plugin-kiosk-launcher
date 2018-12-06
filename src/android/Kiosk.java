@@ -7,6 +7,8 @@ import org.apache.cordova.*;
 import android.widget.*;
 import org.json.JSONArray;
 import org.cordova.plugin.labs.kiosk.KioskActivity;
+import java.lang.Integer;
+import java.util.HashSet;
 
 public class Kiosk extends CordovaPlugin {
 
@@ -14,6 +16,7 @@ public class Kiosk extends CordovaPlugin {
     public static final String SWITCH_LAUNCHER = "switchLauncher";
     public static final String IS_IN_KIOSK = "isInKiosk";
     public static final String IS_SET_AS_LAUNCHER = "isSetAsLauncher";
+    public static final String SET_KEYS_RUNNING = "setKeysRunning";
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
@@ -43,6 +46,17 @@ public class Kiosk extends CordovaPlugin {
                     cordova.getActivity().startActivity(chooser);
                 }
 
+                callbackContext.success();
+                return true;
+            } else if (SET_KEYS_RUNNING.equals(action)) {
+                
+                System.out.println("setKeysRunning: " + args.toString());
+                HashSet<Integer> runningKeys = new HashSet<Integer>();
+                for (int i = 0; i < args.length(); i++) {
+                    runningKeys.add(args.optInt(i));
+                }
+                KioskActivity.runningKeys = runningKeys;
+                
                 callbackContext.success();
                 return true;
             }

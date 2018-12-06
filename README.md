@@ -19,7 +19,7 @@ This plugin has only been tested in Cordova 3.2 or greater, and its use in previ
 
 - [Installation](#installation)
 - [Methods](#methods)
-    - [Kiosk.setKiosEnabled](#kioskSetKioskEnabled)
+    - [Kiosk.setKioskEnabled](#kioskSetKioskEnabled)
     - [Kiosk.switchLauncher](#kioskSwitchLauncher)
     - [Kiosk.isInKiosk](#kioskIsInKiosk)
     - [Kiosk.isSetAsLauncher](#kioskIsSetAsLauncher)
@@ -38,11 +38,11 @@ From github latest (may not be stable)
 
 # Methods
 
-## Kiosk.setKiosEnabled
+## Kiosk.setKioskEnabled
 
 Enables/disables kiosk mode and
 
-    Kiosk.setKiosEnabled(boolean);
+    Kiosk.setKioskEnabled(boolean);
 
 
 ## Kiosk.switchLauncher
@@ -64,7 +64,17 @@ Checks to see if the app is set as a launcher
 
     Kiosk.isSetAsLauncher(function(isSetAsLauncher){ ... })
 
+## Kiosk.setKeysRunning
+
+Keycode whose event propagation should not be prevented - Brightness up/down is now allowed, other prevented
+
+    Kiosk.setKeysRunning([220, 221])  //KEYCODE_BRIGHTNESS_DOWN, KEYCODE_BRIGHTNESS_UP
+
+[Android Keycode review](https://developer.android.com/reference/android/view/KeyEvent#KEYCODE_0)
+
 # Releases
+- 1.2.0
+    - Added keys[] enabled to have action in kioskMode
 - 1.1.2
     - Remove bug on kiosk.js for android 4+ - 'Uncaught SyntaxError: Unexpected token ('
 - 1.0.3
