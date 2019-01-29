@@ -38,11 +38,11 @@ From github latest (may not be stable)
 
 # Methods
 
-## Kiosk.setKiosEnabled
+## Kiosk.setKioskEnabled
 
 Enables/disables kiosk mode and
 
-    Kiosk.setKiosEnabled(boolean);
+    Kiosk.setKioskEnabled(boolean);
 
 
 ## Kiosk.switchLauncher
