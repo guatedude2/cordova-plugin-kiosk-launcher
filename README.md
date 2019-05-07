@@ -19,7 +19,7 @@ This plugin has only been tested in Cordova 3.2 or greater, and its use in previ
 
 - [Installation](#installation)
 - [Methods](#methods)
-    - [Kiosk.setKiosEnabled](#kioskSetKioskEnabled)
+    - [Kiosk.setKioskEnabled](#kioskSetKioskEnabled)
     - [Kiosk.switchLauncher](#kioskSwitchLauncher)
     - [Kiosk.isInKiosk](#kioskIsInKiosk)
     - [Kiosk.isSetAsLauncher](#kioskIsSetAsLauncher)
