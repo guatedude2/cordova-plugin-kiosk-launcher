@@ -1,5 +1,7 @@
 # cordova-plugin-kiosk-launcher
 
+**This plugin is up for adoption**
+
 > This plugin makes a cordova app become a launcher (homescreen).
 
 _Based of [https://github.com/hkalina/cordova-plugin-kiosk]._
