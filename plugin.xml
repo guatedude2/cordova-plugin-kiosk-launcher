@@ -24,7 +24,7 @@
         </config-file>
 
         <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:label='@string/activity_name']" mode="merge">
-            <activity android:name="org.cordova.plugin.labs.kiosk.KioskActivity" android:keepScreenOn="true" android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+            <activity android:name="org.cordova.plugin.labs.kiosk.KioskActivity" android:keepScreenOn="true">
             </activity>
         </edit-config>
 
