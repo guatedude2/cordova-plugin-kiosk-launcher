@@ -38,7 +38,7 @@
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <!-- autorun after the app APK is updated -->
-            <receiver android:name="org.cordova.plugin.labs.kiosk.MyPackageReplacedEventReceiver">
+            <receiver android:exported="false" android:name="org.cordova.plugin.labs.kiosk.MyPackageReplacedEventReceiver">
                 <intent-filter>
                     <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
                 </intent-filter>
